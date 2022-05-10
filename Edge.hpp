@@ -1,20 +1,23 @@
 #pragma once
 #include "Node.hpp"
+class Node;
+class Edge {
+public:
+    int weight;
+    Edge *link;
+    Node *dest;
+    int mark;
 
-class Edge{
-    public:
-    double weight;
-    Edge* link;
-    Node* dest;
-    Edge(){
+    Edge() {
         weight = 0;
         link = nullptr;
+        mark = 0;
         dest = nullptr;
     }
-
-    Edge(Node* dest, Edge* link, double weight){
+    Edge(Node* dest, Edge* link, int weight) {
         this->dest = dest;
         this->link = link;
         this->weight = weight;
+        mark = 0;
     }
 };
