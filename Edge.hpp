@@ -2,10 +2,10 @@
 #include "Node.hpp"
 class Node;
 class Edge {
-public:
+   public:
     int weight;
-    Edge *link;
-    Node *dest;
+    Edge* link;
+    Node* dest;
     int mark;
 
     Edge() {

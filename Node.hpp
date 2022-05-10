@@ -1,15 +1,17 @@
 #pragma once
-#include "Edge.hpp"
 #include <iostream>
 
+#include "Edge.hpp"
+
 using namespace std;
-class Node{
-    public:
+class Edge;
+class Node {
+   public:
     Node *parent, *child, *prev, *next, *link;
     Edge* adj;
     int key, degree, status;
     char C;
-    Node(int key, int degree){
+    Node(int key, int degree) {
         this->key = key;
         this->degree = degree;
         status = 0;
@@ -19,9 +21,8 @@ class Node{
         child = nullptr;
         parent = nullptr;
         adj = nullptr;
-
     }
-    Node(){
+    Node() {
         key = 0;
         degree = 0;
         status = 0;
@@ -32,13 +33,10 @@ class Node{
         parent = nullptr;
         adj = nullptr;
     }
-    ~Node(){/**/
-        if(child != nullptr)
-            delete child;
-        if(prev != nullptr)
-            delete prev;
-        if(next != nullptr)
-            delete next;
+    ~Node() { /**/
+        if (child != nullptr) delete child;
+        if (prev != nullptr) delete prev;
+        if (next != nullptr) delete next;
     }
     void setParent(Node* p) {
         if (parent == p) return;
@@ -52,10 +50,9 @@ class Node{
         else
             cout << next->key;
     }
-    bool checkNeighbour(Node * st) {
+    bool checkNeighbour(Node* st) {
         if (prev == nullptr || next == nullptr) return false;
-        if (next == st)
-            return true;
+        if (next == st) return true;
         return next->checkNeighbour(st);
     }
 };
