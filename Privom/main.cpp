@@ -29,14 +29,15 @@ int main(int argc, char* argv[]) {
     stringstream ss(argv[1]);
     int N = 0;
     ss >> N;
-    int E = 100 * N;
+    int E = 2 * N;
 
     Graph* g = new Graph();
+    Node** nodes = new Node*[N];
     for (int i = 0; i < N; i++) {
-        g->insertNode(i);
+        nodes[i] = g->insertNode(i);
     }
     for (int i = 0; i < E; i++) {
-        g->insertEdges(rand() % N, rand() % N, rand() % N);
+        g->insertEdges(nodes[rand() % N], nodes[rand() % N], rand() % N);
     }
     ofstream f(argv[2], ios::app);
 

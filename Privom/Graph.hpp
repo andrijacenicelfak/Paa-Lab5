@@ -11,8 +11,9 @@ class Graph {
     ~Graph() { delete[] start; }
     Node* findNode(int key);
     Edge* findEdge(int keySrc, int keyDest);
-    void insertNode(int key);
+    Node* insertNode(int key);
     bool insertEdges(int keySrc, int keyDest, int weight);
+    bool insertEdges(Node* nodeSrc, Node* nodeDest, int weight);
     bool insertEdge(int keySrc, int keyDest, int weight);  //
     void deleteNodeEdges(Node* dest);
     void deleteEgdesToNode(Node* dest);  //
@@ -42,11 +43,12 @@ Edge* Graph::findEdge(int keySrc, int keyDest) {
     while (e != nullptr && e->dest->key != keyDest) e = e->link;
     return e;
 }
-void Graph::insertNode(int key) {
+Node* Graph::insertNode(int key) {
     Node* node = new Node();
     node->key = key;
     node->link = start;
     this->start = node;
+    return node;
 }
 bool Graph::insertEdges(int keySrc, int keyDest, int weight) {
     Node* nodeSrc = nullptr;
@@ -60,6 +62,17 @@ bool Graph::insertEdges(int keySrc, int keyDest, int weight) {
         }
         node = node->link;
     }
+    if (nodeSrc == nullptr || nodeDest == nullptr) return false;
+    Edge* std = new Edge(nodeDest, nodeSrc->adj, weight);
+    std->link = nodeSrc->adj;
+    nodeSrc->adj = std;
+
+    Edge* dts = new Edge(nodeSrc, nodeDest->adj, weight);
+    nodeDest->adj = dts;
+
+    return true;
+}
+bool Graph::insertEdges(Node* nodeSrc, Node* nodeDest, int weight) {
     if (nodeSrc == nullptr || nodeDest == nullptr) return false;
     Edge* std = new Edge(nodeDest, nodeSrc->adj, weight);
     std->link = nodeSrc->adj;

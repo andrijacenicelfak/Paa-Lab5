@@ -4,11 +4,11 @@ Vreme za Primov Algoritam :0ms
 -----------------------------------------
 Graph sa : 100 cvorova
 I sa : 1000 grana
-Vreme za Primov Algoritam :1ms
+Vreme za Primov Algoritam :0ms
 -----------------------------------------
 Graph sa : 100 cvorova
 I sa : 10000 grana
-Vreme za Primov Algoritam :2ms
+Vreme za Primov Algoritam :1ms
 -----------------------------------------
 Graph sa : 1000 cvorova
 I sa : 2000 grana
@@ -16,37 +16,33 @@ Vreme za Primov Algoritam :2ms
 -----------------------------------------
 Graph sa : 1000 cvorova
 I sa : 10000 grana
-Vreme za Primov Algoritam :6ms
+Vreme za Primov Algoritam :3ms
 -----------------------------------------
 Graph sa : 1000 cvorova
 I sa : 100000 grana
-Vreme za Primov Algoritam :106ms
+Vreme za Primov Algoritam :58ms
 -----------------------------------------
 Graph sa : 10000 cvorova
 I sa : 20000 grana
-Vreme za Primov Algoritam :13ms
+Vreme za Primov Algoritam :18ms
 -----------------------------------------
 Graph sa : 10000 cvorova
 I sa : 100000 grana
-Vreme za Primov Algoritam :105ms
+Vreme za Primov Algoritam :73ms
 -----------------------------------------
 Graph sa : 10000 cvorova
 I sa : 1000000 grana
-Vreme za Primov Algoritam :1710ms
+Vreme za Primov Algoritam :1604ms
 -----------------------------------------
 Graph sa : 100000 cvorova
 I sa : 200000 grana
-Vreme za Primov Algoritam :239ms
------------------------------------------
-Graph sa : 100000 cvorova
-I sa : 200000 grana
-Vreme za Primov Algoritam :238ms
+Vreme za Primov Algoritam :244ms
 -----------------------------------------
 Graph sa : 100000 cvorova
 I sa : 1000000 grana
-Vreme za Primov Algoritam :1313ms
+Vreme za Primov Algoritam :1344ms
 -----------------------------------------
 Graph sa : 100000 cvorova
 I sa : 10000000 grana
-Vreme za Primov Algoritam :2313ms
+Vreme za Primov Algoritam :22661ms
 -----------------------------------------
