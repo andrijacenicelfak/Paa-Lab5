@@ -5,7 +5,7 @@ class Edge {
    public:
     int weight;
     Edge* link;
-    Node* dest;
+    Node *dest, *src;
     int mark;
 
     Edge() {

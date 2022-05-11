@@ -64,10 +64,11 @@ bool Graph::insertEdges(int keySrc, int keyDest, int weight) {
     }
     if (nodeSrc == nullptr || nodeDest == nullptr) return false;
     Edge* std = new Edge(nodeDest, nodeSrc->adj, weight);
-    std->link = nodeSrc->adj;
+    std->src = nodeSrc;
     nodeSrc->adj = std;
 
     Edge* dts = new Edge(nodeSrc, nodeDest->adj, weight);
+    dts->src = nodeDest;
     nodeDest->adj = dts;
 
     return true;
@@ -75,10 +76,11 @@ bool Graph::insertEdges(int keySrc, int keyDest, int weight) {
 bool Graph::insertEdges(Node* nodeSrc, Node* nodeDest, int weight) {
     if (nodeSrc == nullptr || nodeDest == nullptr) return false;
     Edge* std = new Edge(nodeDest, nodeSrc->adj, weight);
-    std->link = nodeSrc->adj;
+    std->src = nodeSrc;
     nodeSrc->adj = std;
 
     Edge* dts = new Edge(nodeSrc, nodeDest->adj, weight);
+    dts->src = nodeDest;
     nodeDest->adj = dts;
 
     return true;
