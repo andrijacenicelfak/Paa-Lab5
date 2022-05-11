@@ -1,0 +1,32 @@
+Graph sa : 100 cvorova
+I sa : 200 grana
+Vreme za Kruskalov Algoritam :1ms
+-----------------------------------------
+Graph sa : 100 cvorova
+I sa : 1000 grana
+Vreme za Kruskalov Algoritam :4ms
+-----------------------------------------
+Graph sa : 100 cvorova
+I sa : 10000 grana
+Vreme za Kruskalov Algoritam :114ms
+-----------------------------------------
+Graph sa : 1000 cvorova
+I sa : 2000 grana
+Vreme za Kruskalov Algoritam :21ms
+-----------------------------------------
+Graph sa : 1000 cvorova
+I sa : 10000 grana
+Vreme za Kruskalov Algoritam :265ms
+-----------------------------------------
+Graph sa : 1000 cvorova
+I sa : 100000 grana
+Vreme za Kruskalov Algoritam :96973ms
+-----------------------------------------
+Graph sa : 10000 cvorova
+I sa : 20000 grana
+Vreme za Kruskalov Algoritam :2029ms
+-----------------------------------------
+Graph sa : 10000 cvorova
+I sa : 100000 grana
+Vreme za Kruskalov Algoritam :138619ms
+-----------------------------------------

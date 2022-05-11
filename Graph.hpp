@@ -2,6 +2,7 @@
 #include "Edge.hpp"
 #include "FibHeap.hpp"
 #include "Node.hpp"
+#include "Stack.hpp"
 class Graph {
    public:
     Node* start;
@@ -26,11 +27,8 @@ class Graph {
     void setStatusForAllNodes(int status);
 
     void PrimsMTS();
-
-    void Kruskal();
+    void KruskalsMTS();
 };
-
-void Graph::Kruskal() {}
 
 Node* Graph::findNode(int key) {
     Node* node = start;
@@ -262,4 +260,47 @@ void Graph::PrimsMTS() {
     }
     // print();
     /**/
+}
+
+void Graph::KruskalsMTS() {
+    FibHeap* heap = new FibHeap();
+    Node* node = start;
+    int i = 0;
+    while (node != nullptr) {
+        Edge* e = node->adj;
+        while (e != nullptr) {
+            e->mark = 0;
+            Node* edgeNode = new Node();
+            edgeNode->adj = e;
+            edgeNode->key = e->weight;
+            heap->insert(edgeNode);
+            e = e->link;
+        }
+        node->status = i++;
+        node = node->link;
+    }
+    int br;
+    br = 0;
+    Node* en = nullptr;
+    Stack<Node*> stack(size);
+    while ((en = heap->extractMin()) && br < size) {
+        if (en->adj->src->status != en->adj->dest->status) {
+            en->adj->mark = 1;
+            stack.push(en->adj->dest);
+            int ost = en->adj->dest->status;
+            int nst = en->adj->src->status;
+            Node* nn;
+            Edge* ne;
+            while (!stack.isEmpty()) {
+                nn = stack.pop();
+                nn->status = nst;
+                ne = nn->adj;
+                while (ne != nullptr) {
+                    if (ne->dest->status == ost) stack.push(ne->dest);
+                    ne = ne->link;
+                }
+            }
+            br++;
+        }
+    }
 }

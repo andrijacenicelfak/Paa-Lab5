@@ -1,6 +1,7 @@
 {
-    "files.associations": {
-        "charconv": "cpp",
-        "xmemory": "cpp"
-    }
+	"files.associations": {
+		"charconv": "cpp",
+		"xmemory": "cpp",
+		"chrono": "cpp"
+	}
 }

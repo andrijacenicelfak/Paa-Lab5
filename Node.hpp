@@ -55,4 +55,16 @@ class Node {
         if (next == st) return true;
         return next->checkNeighbour(st);
     }
+    // void setStatusRecursive(int st);
 };
+/**
+void Node::setStatusRecursive(int st) {
+    Edge* e = adj;
+    int ost = status;
+    status = status;
+    while (e != nullptr) {
+        if (e->dest->status == ost) e->dest->setStatusRecursive(st);
+        e = e->link;
+    }
+}
+/**/
